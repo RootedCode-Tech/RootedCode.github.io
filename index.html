@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yggdrasil Link Tree</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Segoe UI',sans-serif;
+
+            background-image:url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size:cover;
+            background-position:center;
+            background-attachment:fixed;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            min-height:100vh;
+            padding:40px 20px;
+
+            animation:bgZoom 20s ease-in-out infinite alternate;
+        }
+
+        .container{
+
+            width:100%;
+            max-width:400px;
+
+            text-align:center;
+
+            background:rgba(112,93,93,.70);
+
+            border-radius:22px;
+
+            padding:30px;
+
+            backdrop-filter:blur(18px);
+            -webkit-backdrop-filter:blur(18px);
+
+            border:1px solid rgba(255,255,255,.25);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.35);
+
+            animation:fadeUp .9s ease;
+        }
+
+        .profile-pic{
+
+            width:120px;
+            height:120px;
+
+            border-radius:50%;
+
+            object-fit:cover;
+
+            border:3px solid white;
+
+            margin:0 auto 20px;
+
+            box-shadow:
+                0 0 20px rgba(255,255,255,.35),
+                0 8px 20px rgba(0,0,0,.35);
+
+            transition:.35s ease;
+
+            animation:profileAppear 1s ease;
+        }
+
+        .profile-pic:hover{
+
+            transform:scale(1.08) rotate(5deg);
+
+        }
+
+        h1{
+
+            color:white;
+
+            margin-bottom:25px;
+
+            font-size:2rem;
+
+            text-shadow:0 2px 5px rgba(0,0,0,.35);
+
+        }
+
+        .link-button{
+
+            display:block;
+
+            background:#73e6e5;
+
+            color:#111;
+
+            text-decoration:none;
+
+            font-weight:bold;
+
+            padding:15px;
+
+            margin-bottom:15px;
+
+            border-radius:50px;
+
+            border:1px solid #c74b4b;
+
+            opacity:0;
+
+            transform:translateY(30px);
+
+            animation:buttonFade .7s forwards;
+
+            transition:
+                transform .25s,
+                background .25s,
+                color .25s,
+                box-shadow .25s;
+
+        }
+
+        .link-button:nth-of-type(1){
+            animation-delay:.4s;
+        }
+
+        .link-button:nth-of-type(2){
+            animation-delay:.6s;
+        }
+
+        .link-button:nth-of-type(3){
+            animation-delay:.8s;
+        }
+
+        .link-button:nth-of-type(4){
+            animation-delay:1s;
+        }
+
+        .link-button:hover{
+
+            background:#2d2d2d;
+
+            color:white;
+
+            transform:translateY(-5px) scale(1.05);
+
+            box-shadow:
+                0 12px 25px rgba(0,0,0,.35);
+
+        }
+
+        .link-button:active{
+
+            transform:scale(.98);
+
+        }
+
+        /* ---------------- Animations ---------------- */
+
+        @keyframes fadeUp{
+
+            from{
+                opacity:0;
+                transform:translateY(-40px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+
+        }
+
+        @keyframes profileAppear{
+
+            from{
+                opacity:0;
+                transform:scale(.4) rotate(-180deg);
+            }
+
+            to{
+                opacity:1;
+                transform:scale(1) rotate(0);
+            }
+
+        }
+
+        @keyframes buttonFade{
+
+            from{
+                opacity:0;
+                transform:translateY(30px);
+            }
+
+            to{
+                opacity:1;
+                transform:translateY(0);
+            }
+
+        }
+
+        @keyframes bgZoom{
+
+            from{
+                background-size:100%;
+            }
+
+            to{
+                background-size:108%;
+            }
+
+        }
+
+        @media (max-width:480px){
+
+            .container{
+                padding:25px;
+            }
+
+            h1{
+                font-size:1.6rem;
+            }
+
+            .profile-pic{
+                width:100px;
+                height:100px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <img src="Profiilikuva.png" alt="Profiilikuva" class="profile-pic">
+
+        <h1>Yggdrasil Link Tree</h1>
+
+        <a href="https://github.com/RootedCode-Tech"
+           class="link-button"
+           target="_blank"
+           rel="noopener noreferrer">
+            GitHub
+        </a>
+
+        <a href="https://linkedin.com/in/jari-mikkonen98"
+           class="link-button"
+           target="_blank"
+           rel="noopener noreferrer">
+            LinkedIn
+        </a>
+
+        <a href="https://youtube.com/@korrinbarthehunter?si=ILyptISCrOU9pirY"
+           class="link-button"
+           target="_blank"
+           rel="noopener noreferrer">
+            YouTube
+        </a>
+
+        <a href="https://twitch.tv/korrinbarthehunter"
+           class="link-button"
+           target="_blank"
+           rel="noopener noreferrer">
+            Twitch
+        </a>
+
+    </div>
+
+</body>
+
+</html>
